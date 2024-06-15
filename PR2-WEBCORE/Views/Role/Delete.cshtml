@@ -1,0 +1,35 @@
+﻿@model PR2_WEBCORE.Models.Role
+
+@{
+    ViewData["Title"] = "Eliminar Rol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Eliminar Rol</h1>
+    <div>
+        <h4>¿Está seguro que desea eliminar este rol?</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                ID
+            </dt>
+            <dd class="col-sm-10">
+                @Model.IdRol
+            </dd>
+            <dt class="col-sm-2">
+                Descripción
+            </dt>
+            <dd class="col-sm-10">
+                @Model.Descripcion
+            </dd>
+        </dl>
+        <form asp-controller="Role" asp-action="Delete">
+            <input type="hidden" asp-for="IdRol" />
+            <div class="form-group">
+                <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+                <a asp-controller="Role" asp-action="Index">Volver a la Lista</a>
+            </div>
+        </form>
+    </div>
+</div>

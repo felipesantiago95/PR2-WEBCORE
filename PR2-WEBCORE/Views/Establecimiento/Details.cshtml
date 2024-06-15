@@ -1,0 +1,32 @@
+﻿@model PR2_WEBCORE.Models.Establecimiento
+
+@{
+    ViewData["Title"] = "Detalles de Establecimiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Detalles de Establecimiento</h1>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.IdEstablecimiento</dd>
+        <dt class="col-sm-2">RUC</dt>
+        <dd class="col-sm-10">@Model.Ruc</dd>
+        <dt class="col-sm-2">Dirección</dt>
+        <dd class="col-sm-10">@Model.Direccion</dd>
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.Telefono</dd>
+        <dt class="col-sm-2">Razón Social</dt>
+        <dd class="col-sm-10">@Model.RazonSocial</dd>
+        <dt class="col-sm-2">Representante Legal</dt>
+        <dd class="col-sm-10">@Model.RepresentanteLegal</dd>
+        <dt class="col-sm-2">Ciudad</dt>
+        <dd class="col-sm-10">@Model.Ciudad</dd>
+        <dt class="col-sm-2">País</dt>
+        <dd class="col-sm-10">@Model.Pais</dd>
+    </dl>
+    <div class="form-group">
+        <a asp-action="Edit" asp-route-id="@Model.IdEstablecimiento" class="btn btn-primary">Editar</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver a la Lista</a>
+    </div>
+</div>

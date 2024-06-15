@@ -1,0 +1,36 @@
+﻿@model PR2_WEBCORE.Models.Establecimiento
+
+@{
+    ViewData["Title"] = "Eliminar Establecimiento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Eliminar Establecimiento</h1>
+    <h3>¿Está seguro de que desea eliminar este Establecimiento?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.IdEstablecimiento</dd>
+        <dt class="col-sm-2">RUC</dt>
+        <dd class="col-sm-10">@Model.Ruc</dd>
+        <dt class="col-sm-2">Dirección</dt>
+        <dd class="col-sm-10">@Model.Direccion</dd>
+        <dt class="col-sm-2">Teléfono</dt>
+        <dd class="col-sm-10">@Model.Telefono</dd>
+        <dt class="col-sm-2">Razón Social</dt>
+        <dd class="col-sm-10">@Model.RazonSocial</dd>
+        <dt class="col-sm-2">Representante Legal</dt>
+        <dd class="col-sm-10">@Model.RepresentanteLegal</dd>
+        <dt class="col-sm-2">Ciudad</dt>
+        <dd class="col-sm-10">@Model.Ciudad</dd>
+        <dt class="col-sm-2">País</dt>
+        <dd class="col-sm-10">@Model.Pais</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdEstablecimiento" />
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>

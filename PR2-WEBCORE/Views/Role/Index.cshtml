@@ -1,0 +1,36 @@
+﻿@model List<PR2_WEBCORE.Models.Role>
+
+@{
+    ViewData["Title"] = "Roles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Lista de Roles</h1>
+    <p>
+        <a asp-controller="Role" asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var role in Model)
+            {
+                <tr>
+                    <td>@role.IdRol</td>
+                    <td>@role.Descripcion</td>
+                    <td>
+                        <a asp-controller="Role" asp-action="Edit" asp-route-id="@role.IdRol">Editar</a> |
+                        <a asp-controller="Role" asp-action="Details" asp-route-id="@role.IdRol">Detalles</a> |
+                        <a asp-controller="Role" asp-action="Delete" asp-route-id="@role.IdRol">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

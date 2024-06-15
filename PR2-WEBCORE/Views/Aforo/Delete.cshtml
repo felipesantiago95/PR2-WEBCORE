@@ -1,0 +1,26 @@
+﻿@model PR2_WEBCORE.Models.Aforo
+
+@{
+    ViewData["Title"] = "Eliminar Aforo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Eliminar Aforo</h1>
+    <h3>¿Está seguro de que desea eliminar este Aforo?</h3>
+    <dl class="row">
+        <dt class="col-sm-2">ID</dt>
+        <dd class="col-sm-10">@Model.IdAforo</dd>
+        <dt class="col-sm-2">Descripción</dt>
+        <dd class="col-sm-10">@Model.Descripcion</dd>
+        <dt class="col-sm-2">Porcentaje</dt>
+        <dd class="col-sm-10">@Model.Porcentaje</dd>
+    </dl>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdAforo" />
+        <div class="form-group">
+            <input type="submit" value="Eliminar" class="btn btn-danger" />
+            <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+</div>

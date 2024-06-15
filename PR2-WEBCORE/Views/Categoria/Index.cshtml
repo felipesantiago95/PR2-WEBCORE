@@ -1,0 +1,38 @@
+﻿@model List<PR2_WEBCORE.Models.Categorium>
+
+@{
+    ViewData["Title"] = "Categorías";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Lista de Categorías</h1>
+    <p>
+        <a asp-controller="Categoria" asp-action="Create" class="btn btn-primary">Crear Nueva</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Porcentaje</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var categoria in Model)
+            {
+                <tr>
+                    <td>@categoria.IdCagegoria</td>
+                    <td>@categoria.Descripcion</td>
+                    <td>@categoria.Porcentaje</td>
+                    <td>
+                        <a asp-controller="Categoria" asp-action="Edit" asp-route-id="@categoria.IdCagegoria">Editar</a> |
+                        <a asp-controller="Categoria" asp-action="Details" asp-route-id="@categoria.IdCagegoria">Detalles</a> |
+                        <a asp-controller="Categoria" asp-action="Delete" asp-route-id="@categoria.IdCagegoria">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

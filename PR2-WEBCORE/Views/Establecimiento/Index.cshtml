@@ -1,0 +1,48 @@
+﻿@model List<PR2_WEBCORE.Models.Establecimiento>
+
+@{
+    ViewData["Title"] = "Establecimientos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Lista de Establecimientos</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>RUC</th>
+                <th>Dirección</th>
+                <th>Teléfono</th>
+                <th>Razón Social</th>
+                <th>Representante Legal</th>
+                <th>Ciudad</th>
+                <th>País</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdEstablecimiento</td>
+                    <td>@item.Ruc</td>
+                    <td>@item.Direccion</td>
+                    <td>@item.Telefono</td>
+                    <td>@item.RazonSocial</td>
+                    <td>@item.RepresentanteLegal</td>
+                    <td>@item.Ciudad</td>
+                    <td>@item.Pais</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdEstablecimiento">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdEstablecimiento">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdEstablecimiento">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

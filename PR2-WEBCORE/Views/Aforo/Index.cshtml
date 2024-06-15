@@ -1,0 +1,38 @@
+﻿@model List<PR2_WEBCORE.Models.Aforo>
+
+@{
+    ViewData["Title"] = "Aforos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <h1>Lista de Aforos</h1>
+    <p>
+        <a asp-action="Create" class="btn btn-primary">Crear Nuevo</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Porcentaje</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.IdAforo</td>
+                    <td>@item.Descripcion</td>
+                    <td>@item.Porcentaje</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdAforo">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.IdAforo">Detalles</a> |
+                        <a asp-action="Delete" asp-route-id="@item.IdAforo">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
